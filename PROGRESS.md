@@ -11,7 +11,7 @@
 ## Phases
 
 ### Phase 1 — Trend Predictor
-- [ ] Component: trend_fetcher — Polls YouTube Data API for trending videos, hashtags, audio
+- [x] Component: trend_fetcher — Polls YouTube Data API for trending videos, hashtags, audio
 - [ ] Component: trend_analyzer — Scores and ranks fetched trends; predicts 48–72h peak window
 
 ### Phase 2 — YouTube Channel Automation
