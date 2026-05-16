@@ -2,7 +2,7 @@
 
 **Platform:** Web (Next.js frontend + FastAPI backend)
 **Tech Stack:** Python/FastAPI, Next.js/React, PostgreSQL, Redis, Celery, FFmpeg, Anthropic Claude, OpenAI Whisper
-**GitHub:** TBD
+**GitHub:** https://github.com/rootray/FAiN
 **Orchestration File:** backend/main.py
 **Last Updated:** 2026-05-16
 
