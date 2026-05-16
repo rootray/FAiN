@@ -1,0 +1,69 @@
+{
+  "project": "FAiN",
+  "orchestration_file": "backend/main.py",
+  "components": [
+    {
+      "name": "trend_fetcher",
+      "file": "backend/src/trend_fetcher.py",
+      "purpose": "Polls YouTube Data API for trending videos, hashtags, and audio signals",
+      "status": "not-started",
+      "connects_to": ["trend_analyzer", "job_queue"]
+    },
+    {
+      "name": "trend_analyzer",
+      "file": "backend/src/trend_analyzer.py",
+      "purpose": "Scores and ranks fetched trends; predicts 48–72h peak window",
+      "status": "not-started",
+      "connects_to": ["script_generator", "database"]
+    },
+    {
+      "name": "script_generator",
+      "file": "backend/src/script_generator.py",
+      "purpose": "Calls Anthropic Claude to produce a monetizable script from trend data",
+      "status": "not-started",
+      "connects_to": ["clip_assembler"]
+    },
+    {
+      "name": "clip_assembler",
+      "file": "backend/src/clip_assembler.py",
+      "purpose": "FFmpeg pipeline: selects footage, adds voiceover, subtitles, and licensed music",
+      "status": "not-started",
+      "connects_to": ["upload_manager"]
+    },
+    {
+      "name": "upload_manager",
+      "file": "backend/src/upload_manager.py",
+      "purpose": "Authenticates via OAuth and uploads finished video to YouTube",
+      "status": "not-started",
+      "connects_to": ["database"]
+    },
+    {
+      "name": "job_queue",
+      "file": "backend/src/job_queue.py",
+      "purpose": "Celery + Redis: schedules and tracks async jobs across all components",
+      "status": "not-started",
+      "connects_to": ["trend_fetcher", "clip_assembler", "upload_manager"]
+    },
+    {
+      "name": "database",
+      "file": "backend/src/database.py",
+      "purpose": "PostgreSQL models: trends, scripts, jobs, and channel configuration",
+      "status": "not-started",
+      "connects_to": []
+    },
+    {
+      "name": "dashboard",
+      "file": "frontend/components/Dashboard.tsx",
+      "purpose": "Main UI: trend feed, job status, and channel settings",
+      "status": "not-started",
+      "connects_to": ["auth_ui"]
+    },
+    {
+      "name": "auth_ui",
+      "file": "frontend/components/AuthUI.tsx",
+      "purpose": "Google OAuth login and channel connect flow",
+      "status": "not-started",
+      "connects_to": []
+    }
+  ]
+}
