@@ -1,5 +1,7 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,18 +10,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
       - name: Install backend dependencies
         run: pip install -r backend/requirements.txt
-      - name: Run backend tests
-        run: |
-          echo "No tests yet - replace with: pytest backend/tests/"
+      - name: Backend tests placeholder
+        run: echo "tests pending"
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
       - name: Install frontend dependencies
         run: cd frontend && npm install
-      - name: Run frontend tests
-        run: |
-          echo "No tests yet - replace with: cd frontend && npm test"
+      - name: Frontend tests placeholder
+        run: echo "tests pending"
