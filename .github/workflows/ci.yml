@@ -12,7 +12,8 @@ jobs:
       - name: Install backend dependencies
         run: pip install -r backend/requirements.txt
       - name: Run backend tests
-        run: echo 'Replace with: pytest backend/tests/'
+        run: |
+          echo "No tests yet - replace with: pytest backend/tests/"
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -20,4 +21,5 @@ jobs:
       - name: Install frontend dependencies
         run: cd frontend && npm install
       - name: Run frontend tests
-        run: echo 'Replace with: cd frontend && npm test'
+        run: |
+          echo "No tests yet - replace with: cd frontend && npm test"
